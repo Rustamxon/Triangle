@@ -71,12 +71,13 @@ var app = builder.Build();
 // Updates db in early startup based on latest migration
 //app.ApplyMigrations();
 app.InitAccessor();
+app.ApplyMigrations();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(); 
 }
 app.UseMiddleware<ExceptionHandlerMiddleware>();
 

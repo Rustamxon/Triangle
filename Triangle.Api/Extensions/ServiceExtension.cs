@@ -1,7 +1,5 @@
 ﻿using Triangle.Data.IRepositories;
 using Triangle.Data.Repository;
-using Triangle.Service.Interfaces;
-using Triangle.Service.Services;
 
 
 namespace Triangle.Api.Extensions;

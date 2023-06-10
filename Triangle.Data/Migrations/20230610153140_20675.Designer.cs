@@ -12,8 +12,8 @@ using Triangle.Data.Contexts;
 namespace Triangle.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230428111423_InitMigration")]
-    partial class InitMigration
+    [Migration("20230610153140_20675")]
+    partial class _20675
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,29 +32,31 @@ namespace Triangle.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("BlockedBy")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("Deletedby")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastUpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Role")

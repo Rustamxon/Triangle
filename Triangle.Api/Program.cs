@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<AppDbContext>(
-    Options =>Options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection"))
+    Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection"))
 );
 //builder.Services.AddAuthentication();
 
@@ -77,7 +77,7 @@ app.ApplyMigrations();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(); 
+    app.UseSwaggerUI();
 }
 app.UseMiddleware<ExceptionHandlerMiddleware>();
 

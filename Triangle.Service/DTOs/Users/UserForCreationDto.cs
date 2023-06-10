@@ -20,7 +20,4 @@ public class UserForCreationDto
     [Required(ErrorMessage = "Password is required")]
     public string Password { get; set; }
 
-
-    [Required(ErrorMessage = "Phone number is required")]
-    public string Phone { get; set; }
 }
